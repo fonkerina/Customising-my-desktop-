@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang = 'en'>
+<head>
+    <meta charset = 'UTF-8'>
+    <meta http-equiv = 'Content-Security-Policy' 
+          content = "default-src 'self' file:; 
+          style-src 'self' 'unsafe-inline' file:; 
+          script-src 'self' 'unsafe-inline' file:;">
+    <meta name = 'viewport' content = 'width = device-width, initial-scale = 1.0'>
+    <title>Desktop To Do List</title>
+    <link rel = 'stylesheet' href = "style.css">
+</head>
+<body>
+    <div class = 'header'> 
+        My list
+        <button id = 'close-btn'>&times;</button>
+    </div>
+    <input id = 'new-task' type = 'text' placeholder = "What shall we do next...?"> <!--input box--> 
+        
+    <ul id = 'tasks'></ul> <!--unordered list-->
+    <script src="renderer.js"></script>
+</body>
+</html>

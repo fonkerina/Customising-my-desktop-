@@ -1,0 +1,75 @@
+body {
+  margin: 0;
+  padding: 0;
+  width: 300px;
+  height: 400px;
+  background-image: url(assets/list\ bg.jpeg);
+  background-size: cover;
+  font-family: 'Book Antiqua', Palatino;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+  overflow: hidden;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-app-region: drag;
+}
+
+.header {
+    -webkit-app-region: drag;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    text-align: left;
+    background: rgba(0,0,0,0.5);
+}
+
+#close-btn {
+  -webkit-app-region: no-drag;
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+#new-task {
+  width: 90%;
+  margin: 15px auto;
+  display: block;
+  padding: 8px;
+  border-bottom: 1px solid rgba(79, 12, 58, 0.559);
+  border: none;
+}
+
+ul {
+    list-style: none;
+    padding: 0 10px;
+    margin: 0;
+    overflow-y: hidden;
+    height: 300px;
+}
+
+#tasks {
+    list-style: none;
+    padding: 0;
+    margin: 0 10px;
+}
+
+#tasks li {
+    padding: 6px 10px;
+    margin-bottom: 5px;
+    background: rgba(0,0,0,0.4);
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    transition: all 0.2s;
+}
+
+#tasks li:hover {
+  background: rgba(0,0,0,0.5);
+}
+
+li.completed {
+  text-decoration: line-through;
+  color: rgba(255,255,255,0.5);
+}
