@@ -6,8 +6,10 @@ let win;
 function createWindow() {
     if (win) return;
     win = new BrowserWindow({
-        width: 260,
-        height: 110,
+        width: 240,
+        height: 440,
+        x: 180,
+        y: 80,
         frame: false, //default OS window frame
         transparent: false,
         alwaysOnTop: false,
