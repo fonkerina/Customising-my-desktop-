@@ -7,16 +7,16 @@ window.addEventListener('DOMContentLoaded', () => {
     });
 
     const input = document.getElementById('new-task')
-    const taskcontainer = document.getElementById('tasks')
+    const tasksList = document.getElementById('tasks');
 
     let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 
     function render() {
-        taskcontainer.innerHTML = ""; //clears existing 'li' items
+        tasksList.innerHTML = '' ;
         tasks.forEach((task,i) => { 
             const li = document.createElement("li");
             li.textContent = task.text;
-            if (task.completed) li.classList.add('done');
+            if (task.completed) li.classList.add('completed');
 
             li.addEventListener('click', () => {
                 task.completed =!task.completed;
@@ -27,18 +27,11 @@ window.addEventListener('DOMContentLoaded', () => {
             li.addEventListener('dblclick', () => {
             tasks.splice(i, 1);
             render();
+            saveTasks();
             });
 
-            taskcontainer.appendChild(li); //appends node and returns it
+            tasksList.appendChild(li);
         });
-    }
-
-    function addTask(text){
-        if (!text.trim()) return; //ignores empty input?
-        tasks.push({text, completed: false});
-        render();
-        saveTasks();
-        input.value = ''; //clears text box
     }
 
     function saveTasks() {
@@ -46,13 +39,17 @@ window.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('tasks', JSON.stringify(uncompletedTasks));
     }
 
+    function addTask(text){
+        if (!text.trim()) return; //ignores empty input
+        tasks.push({text, completed: false});
+        render();
+        saveTasks();
+        input.value = ''; //clears text box
+    }
+
     input.addEventListener('keydown', e => {
         if (e.key === 'Enter') addTask(input.value);
     }); //inputs task when enter key is pressed 
-
-    closeBtn.addEventListener('click', () => {
-        window.electronAPI.closeWindow();
-    });
 
     render();
 });

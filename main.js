@@ -17,7 +17,7 @@ function createWindow() {
         skipTaskbar: true,
         hasShadow: true,
         webPreferences: {
-            reload: path.join(__dirname, 'preload.js'),
+            preload: path.join(__dirname, 'preload.js'),
             contextIsolation: true, //seperates renderer from Node env for security
             nodeIntegration: false //prevents direct Node access in the renderer
         }
