@@ -20,7 +20,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
             li.addEventListener('click', () => {
                 task.completed =!task.completed;
-                li.classList.toggle('done');
+                li.classList.toggle('completed');
                 saveTasks();
             });
 
