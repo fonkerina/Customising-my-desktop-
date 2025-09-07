@@ -16,7 +16,7 @@ body {
   padding: 0;
   width: 240px;
   height: 440px;
-  background-image: url(assets/list\ bg.jpeg);
+  background-image: url(list\ bg.jpeg);
   background-size: cover;
   font-family: "Tangerine", cursive;
   color: white;
@@ -66,6 +66,11 @@ body {
   border-radius: 6px;
   background: linear-gradient(to top, rgba(0,0,0,0.2), rgba(0,0,0,0))
 }
+
+#new-task::placeholder {
+    font-weight: 300; 
+    color: rgba(174, 174, 174, 0.8);       
+  }
 
 ul {
     list-style: none;
